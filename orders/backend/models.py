@@ -25,6 +25,7 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, email, password, **extra_fields):
+        """Создайте и сохраните пользователя с указанным именем пользователя, адресом электронной почты и паролем."""
         if not email:
             raise ValueError('The given email must be set')
         email = self.normalize_email(email)
